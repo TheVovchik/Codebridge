@@ -11,6 +11,8 @@ import './Card.scss';
 import { useAppSelector } from '../../../store/hooks';
 import { AppDispatch } from '../../../store/store';
 import * as topicsActions from '../../../features/topics';
+import { sliceTopic } from '../../../Utils/sliceTopic';
+import { sliceSummary } from '../../../Utils/sliceSummary';
 
 type Props = {
   topic: SortedTopic,
@@ -31,20 +33,8 @@ export const Card: FC<Props> = ({ topic }) => {
 
   const hasMore = title.length > 40 || summary.length > 100;
 
-  function sliceTopic() {
-    return title.length <= 67
-      ? title
-      : `${title.slice(0, 67).trim()}...`;
-  }
-
-  function sliceSummary() {
-    return summary.length <= 100
-      ? summary
-      : `${summary.slice(0, 97).trim()}...`;
-  }
-
-  const topicTitle = useMemo(() => sliceTopic().split(' '), [query]);
-  const description = useMemo(() => sliceSummary().split(' '), [query]);
+  const topicTitle = useMemo(() => sliceTopic(title).split(' '), [query]);
+  const description = useMemo(() => sliceSummary(summary).split(' '), [query]);
 
   const countMatches = useCallback(() => {
     const countTitles = topicTitle

@@ -27,7 +27,7 @@ export const Homepage: FC = () => {
 
       {loading && <Loader />}
 
-      {!loading && quantity !== 0 && (
+      {!loading && (
         <>
           <Results />
 

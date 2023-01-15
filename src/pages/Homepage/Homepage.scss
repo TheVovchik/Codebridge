@@ -1,3 +1,9 @@
+@import '../../styles/mixins';
+
 .homepage {
   padding: 50px 75px 60px;
+}
+
+.message {
+  @include font-24;
 }
