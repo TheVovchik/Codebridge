@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { FC, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { QueryFilter } from '../../components/QueryFilter';
@@ -14,7 +12,7 @@ import { Cards } from '../../components/Cards';
 export const Homepage: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const {
-    loading, error, quantity,
+    loading, error,
   } = useAppSelector(state => state.topics);
 
   useEffect(() => {
@@ -27,7 +25,13 @@ export const Homepage: FC = () => {
 
       {loading && <Loader />}
 
-      {!loading && (
+      {!loading && error && (
+        <div className="message">
+          {error}
+        </div>
+      )}
+
+      {!loading && !error && (
         <>
           <Results />
 

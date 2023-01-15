@@ -1,0 +1,22 @@
+@import '../../styles/mixins';
+@import '../../styles/vars';
+
+.button {
+  display: flex;
+  gap: 8px;
+
+  text-decoration: none;
+  color: $text;
+
+  @include font-16;
+  font-weight: 700;
+  line-height: 24px;
+
+  &:hover > .topic__arrow {
+    margin-left: -4px;
+  }
+
+  &:hover > .topic__button-name {
+    margin-left: 4px;
+  }
+}

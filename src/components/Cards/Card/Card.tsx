@@ -1,26 +1,23 @@
 import {
-  FC, Fragment, useMemo, useCallback, useEffect,
+  FC, Fragment, memo,
 } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 // eslint-disable-next-line max-len
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
 import { SortedTopic } from '../../../types/Topic';
 import Arrow from '../../../images/Arrow-Right.svg';
 import './Card.scss';
 import { useAppSelector } from '../../../store/hooks';
-import { AppDispatch } from '../../../store/store';
-import * as topicsActions from '../../../features/topics';
-import { sliceTopic } from '../../../Utils/sliceTopic';
 import { sliceSummary } from '../../../Utils/sliceSummary';
+import { sliceTitle } from '../../../Utils/sliceTitle';
 
 type Props = {
   topic: SortedTopic,
 };
 
-export const Card: FC<Props> = ({ topic }) => {
-  const dispatch = useDispatch<AppDispatch>();
+export const Card: FC<Props> = memo(({ topic }) => {
   const { query } = useAppSelector(state => state.topics);
+  const navigate = useNavigate();
 
   const {
     id, imageUrl, title, summary,
@@ -31,43 +28,20 @@ export const Card: FC<Props> = ({ topic }) => {
       { day: 'numeric', month: 'long', year: 'numeric' })
     .split(' ');
 
-  const hasMore = title.length > 40 || summary.length > 100;
+  const hasMore = title.length > 70 || summary.length > 100;
+  const topicTitle = sliceTitle(title).split(' ');
+  const description = sliceSummary(summary).split(' ');
 
-  const topicTitle = useMemo(() => sliceTopic(title).split(' '), [query]);
-  const description = useMemo(() => sliceSummary(summary).split(' '), [query]);
-
-  const countMatches = useCallback(() => {
-    const countTitles = topicTitle
-      .reduce((acc, curr) => {
-        return query
-          .includes(curr.toLowerCase().replace(/[.,]/g, '').trim())
-          ? acc + 1
-          : acc;
-      }, 0);
-
-    const countDescr = description
-      .reduce((acc, curr) => {
-        return query
-          .includes(curr.toLowerCase().replace(/[.,]/g, '').trim())
-          ? acc + 1
-          : acc;
-      }, 0);
-
-    const thisTopic = {
-      ...topic,
-      titleQueryMatches: countTitles,
-      summaryQueryMatches: countDescr,
-    };
-
-    dispatch(topicsActions.actions.addMatches(thisTopic));
-  }, [topicTitle, description, query]);
-
-  useEffect(() => {
-    countMatches();
-  }, [topicTitle, description]);
+  const openTopic = () => {
+    navigate(`/${id}`);
+  };
 
   return (
-    <div className="card">
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+    <div
+      className="card"
+      onClick={openTopic}
+    >
       <div className="card__image-box">
         <img
           src={imageUrl}
@@ -120,8 +94,7 @@ export const Card: FC<Props> = ({ topic }) => {
       </p>
 
       {hasMore && (
-        <Link
-          to={`${id}`}
+        <div
           className="card__more"
         >
           <span>
@@ -132,8 +105,8 @@ export const Card: FC<Props> = ({ topic }) => {
             src={Arrow}
             alt="Arrow-Right"
           />
-        </Link>
+        </div>
       )}
     </div>
   );
-};
+});

@@ -41,26 +41,21 @@
     color: black;
   }
 
-  &__back {
-    display: flex;
+  &__button {
     position: relative;
     top: -60px;
-    gap: 8px;
     padding-left: 150px;
-
-    text-decoration: none;
-    color: $text;
-
-    @include font-16;
-    font-weight: 700;
-    line-height: 24px;
-
-    &:hover > .topic__arrow {
-      margin-left: -4px;
-    }
-
-    &:hover > .topic__button-name {
-      margin-left: 4px;
-    }
   }
+}
+
+.center {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  @include font-24;
 }

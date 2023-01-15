@@ -6,7 +6,8 @@ import { AppDispatch } from '../../store/store';
 import * as topicActions from '../../features/topic';
 import { useAppSelector } from '../../store/hooks';
 import './ArticlePage.scss';
-import Arrow from '../../images/Arrow-Left.svg';
+import { Loader } from '../../components/Loader';
+import { HomeButton } from '../../components/HomeButton';
 
 export const ArticlePage: FC = () => {
   const [topicId, setTopicId] = useState(0);
@@ -28,6 +29,19 @@ export const ArticlePage: FC = () => {
 
   return (
     <>
+      {loading && (
+        <div className="center">
+          <Loader />
+        </div>
+      )}
+
+      {!loading && error && (
+        <div className="center">
+          <h1>{error}</h1>
+          <HomeButton />
+        </div>
+      )}
+
       {!loading && topic && (
         <div className="topic">
           <div className="topic__back-img">
@@ -48,20 +62,9 @@ export const ArticlePage: FC = () => {
             </p>
           </div>
 
-          <Link
-            to="/home"
-            className="topic__back"
-          >
-            <img
-              src={Arrow}
-              alt="Arrow-Left"
-              className="topic__arrow"
-            />
-
-            <span className="topic__button-name">
-              Back to homepage
-            </span>
-          </Link>
+          <div className="topic__button">
+            <HomeButton />
+          </div>
         </div>
       )}
     </>

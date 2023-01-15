@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { FC, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../store/hooks';

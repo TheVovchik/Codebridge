@@ -10,6 +10,7 @@
 - Axios for data request
 - lodash.debouncer (wait delay for user input)
 - React router v6 for navigation
+- Redux/toolkit to storage data
 
 [MOCK-UP](https://www.figma.com/file/h1veXmuEt84sT7PEZgF42K/Frontend_test?node-id=0%3A1&t=SWkoSGHxNg38rHqH-0)
 
@@ -26,4 +27,4 @@ The priority of fields: (1) names; and (2) description. The article with one mat
 
 The matched keywords are highlighted with yellow color.
 
-The user can click on ```Read more``` button to go to an article page that contains the title and full description of the selected article.
+The user can click on card to go to an article page that contains the title and full description of the selected article.

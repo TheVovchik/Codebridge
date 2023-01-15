@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { getTopics } from '../api/api';
 import { SortedTopic, Topic } from '../types/Topic';
 import { sliceSummary } from '../Utils/sliceSummary';
-import { sliceTopic } from '../Utils/sliceTopic';
+import { sliceTitle } from '../Utils/sliceTitle';
 
 type TopicsState = {
   topics: Topic[];
@@ -51,7 +51,7 @@ const TopicsSlice = createSlice({
     },
     countMatches: (state) => {
       state.topicsWithQuery = state.topicsWithQuery.map(topic => {
-        const topicTitle = sliceTopic(topic.title).split(' ');
+        const topicTitle = sliceTitle(topic.title).split(' ');
         const description = sliceSummary(topic.summary).split(' ');
 
         const countTitles = topicTitle
