@@ -1,0 +1,47 @@
+@mixin font-24 {
+  font-family: 'Montserrat';
+  font-size: 24px;
+  line-height: 30px;
+}
+
+@mixin font-22 {
+  font-family: 'Montserrat';
+  font-size: 22px;
+  line-height: 28px;
+}
+
+@mixin font-18 {
+  font-family: 'Montserrat';
+  font-size: 18px;
+  line-height: 27px;
+}
+
+@mixin font-16 {
+  font-family: 'Montserrat';
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@mixin font-14 {
+  font-family: 'Montserrat';
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin desktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 995px) {
+    @content;
+  }
+}
+
+@mixin mini {
+  @media (min-width: 550px) {
+    @content;
+  }
+}
