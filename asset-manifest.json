@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Codebridge/static/css/main.86df2cbb.css",
-    "main.js": "/Codebridge/static/js/main.47497511.js",
+    "main.css": "/Codebridge/static/css/main.55a6028f.css",
+    "main.js": "/Codebridge/static/js/main.0c6f99a8.js",
     "static/media/Preloader.svg": "/Codebridge/static/media/Preloader.0aaf07f39acaa32ce036.svg",
     "static/media/Arrow-Left.svg": "/Codebridge/static/media/Arrow-Left.5ab17a18fdc37c472dc3a605f61c0564.svg",
     "static/media/Arrow-Right.svg": "/Codebridge/static/media/Arrow-Right.da47d01a9fb2ed34b3c39cae87ee5638.svg",
     "static/media/Search.svg": "/Codebridge/static/media/Search.fa6653935ac869051f42fd3ebd879ed0.svg",
     "index.html": "/Codebridge/index.html",
-    "main.86df2cbb.css.map": "/Codebridge/static/css/main.86df2cbb.css.map",
-    "main.47497511.js.map": "/Codebridge/static/js/main.47497511.js.map"
+    "main.55a6028f.css.map": "/Codebridge/static/css/main.55a6028f.css.map",
+    "main.0c6f99a8.js.map": "/Codebridge/static/js/main.0c6f99a8.js.map"
   },
   "entrypoints": [
-    "static/css/main.86df2cbb.css",
-    "static/js/main.47497511.js"
+    "static/css/main.55a6028f.css",
+    "static/js/main.0c6f99a8.js"
   ]
 }
