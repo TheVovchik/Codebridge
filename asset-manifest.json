@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Codebridge/static/css/main.46aa0d3b.css",
-    "main.js": "/Codebridge/static/js/main.1b01d35b.js",
+    "main.js": "/Codebridge/static/js/main.d4b228fc.js",
     "static/media/Preloader.svg": "/Codebridge/static/media/Preloader.0aaf07f39acaa32ce036.svg",
     "static/media/Arrow-Left.svg": "/Codebridge/static/media/Arrow-Left.5ab17a18fdc37c472dc3a605f61c0564.svg",
     "static/media/Arrow-Right.svg": "/Codebridge/static/media/Arrow-Right.da47d01a9fb2ed34b3c39cae87ee5638.svg",
     "static/media/Search.svg": "/Codebridge/static/media/Search.fa6653935ac869051f42fd3ebd879ed0.svg",
     "index.html": "/Codebridge/index.html",
     "main.46aa0d3b.css.map": "/Codebridge/static/css/main.46aa0d3b.css.map",
-    "main.1b01d35b.js.map": "/Codebridge/static/js/main.1b01d35b.js.map"
+    "main.d4b228fc.js.map": "/Codebridge/static/js/main.d4b228fc.js.map"
   },
   "entrypoints": [
     "static/css/main.46aa0d3b.css",
-    "static/js/main.1b01d35b.js"
+    "static/js/main.d4b228fc.js"
   ]
 }
