@@ -1,11 +1,14 @@
 @import '../../styles/mixins';
 
 .cards {
+  max-width: 1440px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 45px;
+
+  margin: 0 auto;
 
   @include tablet {
     display: grid;
