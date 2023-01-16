@@ -70,7 +70,12 @@ export const Card: FC<Props> = memo(({ topic }) => {
             // eslint-disable-next-line react/no-array-index-key
             <Fragment key={index}>
               {isSelected
-                ? <span className="card__selected-title">{`${`${word} `} `}</span>
+                ? (
+                  <>
+                    <span className="card__selected-title">{word}</span>
+                    <span>{' '}</span>
+                  </>
+                )
                 : `${word} `}
             </Fragment>
           );
@@ -86,7 +91,12 @@ export const Card: FC<Props> = memo(({ topic }) => {
             // eslint-disable-next-line react/no-array-index-key
             <Fragment key={index}>
               {isSelected
-                ? <span className="card__selected-desc">{`${`${word} `} `}</span>
+                ? (
+                  <>
+                    <span className="card__selected-desc">{word}</span>
+                    <span>{' '}</span>
+                  </>
+                )
                 : `${word} `}
             </Fragment>
           );
