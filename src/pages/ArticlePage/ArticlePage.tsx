@@ -22,6 +22,13 @@ export const ArticlePage: FC = () => {
   }, [location]);
 
   useEffect(() => {
+    if (window.fbq) {
+      window.fbq('track', 'ViewContent', {
+        content_type: 'Topic Page',
+        content_id: 'topicId',
+      });
+    }
+
     if (topicId !== 0) {
       dispatch(topicActions.initOne(topicId));
     }
