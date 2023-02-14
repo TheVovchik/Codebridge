@@ -9,6 +9,7 @@
       name="description"
       content="Web site created using create-react-app"
     />
+    <meta name="facebook-domain-verification" content="rumkpdu8m8349hp250eqk2wjieof1y" />
     <title>News</title>
     <!-- Meta Pixel Code -->
     <script>
@@ -31,6 +32,29 @@
     <!-- End Meta Pixel Code -->
   </head>
 
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyC-YSPDTntGBhZXki3HvKdDQviRs87c3PI",
+      authDomain: "vovchikfreehosting.firebaseapp.com",
+      projectId: "vovchikfreehosting",
+      storageBucket: "vovchikfreehosting.appspot.com",
+      messagingSenderId: "352781441273",
+      appId: "1:352781441273:web:995a78a2a4b39cc40cea28",
+      measurementId: "G-DB5RB72FJL"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
   <body>
     <div id="root"></div>
   </body>
