@@ -25,7 +25,7 @@ export const ArticlePage: FC = () => {
     if (window.fbq) {
       window.fbq('track', 'ViewContent', {
         content_type: 'Topic Page',
-        content_id: 'topicId',
+        content_id: topicId,
       });
     }
 
