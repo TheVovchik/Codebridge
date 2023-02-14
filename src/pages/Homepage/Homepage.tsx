@@ -16,6 +16,12 @@ export const Homepage: FC = () => {
   } = useAppSelector(state => state.topics);
 
   useEffect(() => {
+    if (window.fbq) {
+      window.fbq('track', 'ViewContent', {
+        content_type: 'home page',
+      });
+    }
+
     dispatch(topicsActions.initAll());
   }, []);
 
